@@ -1,0 +1,44 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Make a txt file named hive-emp.txt
+1,ABC,1000
+2,DEF,2000
+3,GHI,3000
+4,JKL,4000
+5,MNO,5000
+
+pig -x local       (To start grunt in Pig)
+
+employeeData = LOAD '/home/cloudera/hive-emp.txt' USING PigStorage(',') AS (id:int,name:chararray,salary:int);
+DESCRIBE employeeData;
+DUMP employeeData;
+
+filterData = FILTER employeeData BY salary>2000;
+DUMP filterData;
+
+salaryDetails = FOREACH employeeData GENERATE id,salary;
+DUMP salaryDetails;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Make a txt file named pig-student.txt
+1,ABC,21,89
+2,DEF,20,93
+3,GHI,21,80
+4,JKL,22,92
+5,MNO,20,87
+6,PQR,21,79
+
+studentData = LOAD '/home/cloudera/pig-student.txt' USING PigStorage(',') AS (id:int,name:chararray,age:int,percentage:int);
+DUMP studentData
+
+groupedStudentData = GROUP studentData BY age;
+DUMP groupedStudentData;
+
+innerJoin = JOIN employeeData BY id, studentData BY id;
+DUMP innerJoin;
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

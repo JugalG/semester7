@@ -1,0 +1,25 @@
+Text file -> hive-emp.txt
+contents:
+1,ABC,1000
+2,DEF,2000
+3,GHI,3000
+4,JKL,4000
+5,MNO,5000
+6,PQR,6000
+
+
+terminal -> hive
+
+show databases;
+create database employee;
+show databases;
+use employee;
+create table emp(id INT, name STRING, salary INT) row format delimited fields terminated by ',' stored as textfile;
+describe emp;
+load data local inpath '/home/cloudera/hive-emp.txt' into table emp;
+select * from emp;
+alter table emp rename to emp data;
+select * from emp data where id=2;
+select count (*) from emp data;
+select AVG(salary) as avgsalary from empdata;
+select MAX(salary) as maxsalary from emp data;

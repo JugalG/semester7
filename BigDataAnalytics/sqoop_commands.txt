@@ -1,0 +1,29 @@
+clearterminal -> mysql -u root -p
+create database bank;
+use bank;
+create table register(accno varchar(20), name varchar(20), number varchar(20),email varchar(30), password varchar(10), age varchar(3));
+describe register;
+insert into register values ("1","raj","11","raj@gmail.com","raj@123","11");
+insert into register values ("2","tanay","12","tanay@gmail.com","tanay@123","12");
+insert into register values ("3","raj","13","sid@gmail.com","sid@123","13");
+insert into register values ("4","raj","14","raunak@gmail.com","raunak@123","14");
+select * from register;
+exit;
+
+#Create a folder after exiting sql, create a folder in the Clousera file system to import the above MySql table.
+#folder /home/cloudera  & folder name -> myfirstdata
+sqoop import --connect jdbc:mysql://127.0.0.1:3306/bank --username root --password cloudera --table register --target-dir=/home/cloudera/myfirstdata -m 1
+hadoop fs -ls /home/cloudera/myfirstdata
+hadoop fs -cat /home/cloudera/myfirstdata/part-m-00000
+
+#exporting data from hdfs to MySql
+terminal -> mysql -u root -p
+use bank;
+create table registercopy(accno varchar(20), name varchar(20), number varchar(20),email varchar(30), password varchar(10), age varchar(3));
+describe registercopy;
+exit;
+
+sqoop export --connect jdbc:mysql://127.0.0.1:3306/bank --username root --password cloudera --table register --export-dir /home/cloudera/myfirstdata
+mysql -u root -p
+use bank;
+select * from registercopy;
