@@ -1,0 +1,126 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": ["Hi", "How are you", "Hello"],
+            "responses": ["Hello! How can I assist you today?", "Hi there! What can I help you with?", "Good day! How can I be of service?"],
+            "context_set": ""
+        },
+        {
+            "tag": "goodbye",
+            "patterns": ["Goodbye", "See you later", "I'm leaving"],
+            "responses": ["Goodbye! Feel free to return if you have more questions.", "Take care! See you next time.", "Farewell!"],
+            "context_set": ""
+        },
+        {
+            "tag": "weather",
+            "patterns": [
+                "What's the weather forecast for tomorrow?",
+                "Is it going to rain this week.",
+                "Is it going to be sunny today?",
+                "How's the weather looking for planting season?"
+            ],
+            "responses": [
+                "I can provide weather forecasts for various timeframes. Please specify the date or timeframe you're interested in.",
+                "Today and tomorrow are sunny but the rest of the weekend it's expected to rain a lot",
+                "Today indeed is a peculiarly sunny day",
+                "From october to december it will be very suitable for cold cash crops"
+            ],
+            "context_set": "weather"
+        },
+        {
+            "tag": "crops",
+            "patterns": [
+                "What are the best winter crops?",
+                "Can you suggest crops for a small garden?",
+                "Tell me about high-yield crop varieties.",
+                "Crop recommendations for organic farming?"
+            ],
+            "responses": [
+                "Wheat, Barley, Potato, Chickpea, Sunflower,the best suitable for maharashtra.",
+                "Small garden crops should maximize space. What's the size of your garden?",
+                "High-yield varieties are essential for productivity. Let's explore some options.",
+                "Organic farming relies on specific crop choices. What's your preferred approach to organic farming?"
+            ],
+            "context_set": "crops"
+        },
+        {
+            "tag": "fertilizer",
+            "patterns": [
+                "How often should I fertilize my crops?",
+                "Tell me about nitrogen-rich fertilizers.",
+                "Fertilizer application rates for fruit trees?",
+                "Organic vs. synthetic fertilizers, which is better?"
+            ],
+            "responses": [
+                "Fertilization frequency depends on the crop and soil. Can you specify the crop you're growing?",
+                "Nitrogen-rich fertilizers can boost plant growth. Let's discuss their benefits.",
+                "Fruit trees have unique fertilizer requirements. Let's tailor a plan for your orchard.",
+                "The choice between organic and synthetic fertilizers depends on your goals. Let's explore the pros and cons."
+            ],
+            "context_set": "fertilizer"
+        },
+        {
+            "tag": "plant_health",
+            "patterns": [
+                "How can I prevent root rot in my plants?",
+                "My tomatoes have brown spots. What's the issue?",
+                "Tell me about natural remedies for plant diseases.",
+                "Why are my plants not flowering?"
+            ],
+            "responses": [
+                "Preventing root rot involves proper drainage. Let's troubleshoot your plant's conditions.",
+                "Brown spots on tomatoes can be due to various factors. Let's diagnose the problem.",
+                "Natural remedies for plant diseases can be effective. Let's discuss some options.",
+                "Lack of flowering might be linked to nutrition or environmental factors. Let's investigate."
+            ],
+            "context_set": "plant_health"
+        },
+        {
+            "tag": "pests",
+            "patterns": [
+                "How do I control aphids on my roses?",
+                "What's the best way to repel deer from my garden?",
+                "Tell me about integrated pest management (IPM).",
+                "Why are there so many ants in my garden?"
+            ],
+            "responses": [
+                "Aphid control methods vary. Let's explore options for your roses.",
+                "Deer can be challenging to deter. Let's discuss strategies to protect your garden.",
+                "Integrated pest management (IPM) is a holistic approach to pest control. Let's delve into IPM practices.",
+                "Ant infestations can disrupt gardens. Let's find a solution to your ant problem."
+            ],
+            "context_set": "pests"
+        },
+        {
+            "tag": "crop_rotation",
+            "patterns": ["Why is crop rotation important?", "Benefits of crop rotation", "Crop rotation techniques"],
+            "responses": ["Crop rotation helps improve soil fertility and reduce pests. Let's explore the advantages and techniques.", "Crop rotation is a vital farming practice. Would you like to learn more?"],
+            "context_set": "crop_rotation"
+        },
+        {
+            "tag": "irrigation",
+            "patterns": ["How should I irrigate my crops?", "Irrigation methods", "Watering schedule"],
+            "responses": ["Effective irrigation is crucial for crop health. Can you provide details about your irrigation system?", "Choosing the right irrigation method is important. Let's discuss your options."],
+            "context_set": "irrigation"
+        },
+        {
+            "tag": "organic_farming",
+            "patterns": ["Tell me about organic farming", "Advantages of organic farming", "Organic farming practices"],
+            "responses": ["Organic farming promotes sustainability and soil health. Would you like to delve into organic farming principles?", "Organic farming has numerous benefits. Let's explore its practices."],
+            "context_set": "organic_farming"
+        },
+        {
+            "tag": "market_prices",
+            "patterns": ["What are the current market prices for crops?", "Crop price updates", "How to find market prices"],
+            "responses": ["Market prices vary by location and time. Can you specify the crop and region you're interested in?", "I can help you find current market prices. Please provide more details."],
+            "context_set": "market_prices"
+        },
+        {
+            "tag": "harvesting",
+            "patterns": ["When is the right time to harvest my crops?", "Harvesting guidelines", "How to store harvested crops"],
+            "responses": ["Harvesting timing depends on the crop type, considering your loacation it sahll be next month", "Proper harvesting and storage are crucial. Can you tell me more about your crops?"],
+            "context_set": "harvesting"
+        }
+    ]
+}
